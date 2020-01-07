@@ -27,7 +27,6 @@ def hello(request):
                     }
                 ]
             }
-
         }
     return JsonResponse(data)
 
