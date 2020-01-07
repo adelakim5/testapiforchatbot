@@ -28,7 +28,8 @@ def hello(request):
             ]
         }
     }
-    return JsonResponse(json.dumps(data, ensure_ascii=False),safe=False)
+    return HttpResponse(json.dumps(data), content_type='application/json')
+    # return JsonResponse(json.dumps(data, ensure_ascii=False),safe=False)
 
 # Create your views he`re.
 class PostViewSet(viewsets.ModelViewSet):
