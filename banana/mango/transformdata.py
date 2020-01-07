@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 from .shared import QUESTION, BLOCK_ID
 class transformData:
-    0 1 2 3
     def __init__(self,blockId):
         self.blockId = blockId
         self.block_index = BLOCK_ID.index(blockId)
