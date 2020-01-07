@@ -3,8 +3,8 @@ from .shared import QUESTION, BLOCK_ID
 class transformData:
     
     def __init__(self,blockId):
-        self.blockId = BLOCK_ID[BLOCK_ID.index(blockId) + 1]
-        self.block_index = BLOCK_ID.index(blockId) + 1
+        self.blockId = blockId
+        self.block_index = BLOCK_ID.index(blockId)
         self.question = QUESTION[self.block_index]
         
     def getJsonData(self):
