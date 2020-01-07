@@ -28,7 +28,7 @@ def hello(request):
             ]
         }
     }
-    return JsonResponse(data,safe=False)
+    return JsonResponse(data,json_dumps_params = {'ensure_ascii': True},safe=False)
 
 # Create your views he`re.
 class PostViewSet(viewsets.ModelViewSet):
