@@ -17,8 +17,12 @@ ANSWER = ["극히 드물다","가끔 있었다","종종 있었다","대부분 �
 def hello(request):
     rData = responseData(request)
     block_id = rData.getBlockId()
+    print(block_id)
+    print(BLOCK_ID.index(block_id) + 1)
     utterance = rData.getUtterance()
+    print(utterance)
     block_name = rData.getBlockName()
+    print(block_name)
     data = transformData(block_id).getJsonDump()   
     if(ANSWER.__contains__(utterance)):
         block_id = BLOCK_ID[BLOCK_ID.index(block_id) + 1]
