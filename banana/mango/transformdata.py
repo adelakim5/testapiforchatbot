@@ -3,10 +3,10 @@ from .shared import QUESTION, BLOCK_ID
 class transformData:
     def __init__(self,blockId):
         self.blockId = blockId
-        self.block_index = BLOCK_ID.index(blockId)
-        self.question = QUESTION[self.block_index]
-        if(len(BLOCK_ID) > BLOCK_ID.index(blockId)+1):
-            self.nextBlockId = BLOCK_ID[BLOCK_ID.index(blockId)+1]
+        self.block_index = BLOCK_ID.index(blockId) ## 2
+        self.question = QUESTION[self.block_index] ## 먹고 싶지 않다.
+        if(len(BLOCK_ID) > self.block_index+1): ## 
+            self.nextBlockId = BLOCK_ID[self.block_index+1] ## 3
         else:
             self.nextBlockId = 0
     
