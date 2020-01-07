@@ -17,17 +17,39 @@ def hello(request):
     # print(type(param_id))
     # post = Post.objects.all().get(id=param_id)
     data = {
-            'version': "2.0",
-            'template': {
-                'outputs': [
-                    {
-                        'simpleText': {
-                            'text': 'simple text. plz show me'
-                        }
-                    }
-                ]
-            }
+"version": "2.0",
+  "template": {
+    "outputs": [
+      {
+        "simpleText": {
+          "text": "토트넘 선수 리스트입니다."
         }
+      }
+    ],
+    "quickReplies": [
+      {
+        "messageText": "손흥민",
+        "action": "message",
+        "label": "손흥민"
+      },
+      {
+        "messageText": "헤리케인",
+        "action": "message",
+        "label": "헤리케인"
+      },
+      {
+        "messageText": "에릭센",
+        "action": "message",
+        "label": "에릭센"
+      },
+      {
+        "messageText": "요리스",
+        "action": "message",
+        "label": "요리스"
+      }
+    ]
+  }
+}
     return JsonResponse(data)
 
 # Create your views he`re.
