@@ -14,6 +14,10 @@ def hello(request):
     print(received_json_data)
     block_id = received_json_data['userRequest']['block']['id']
     block_name = received_json_data['userRequest']['block']['name']
+    context_param_name = received_json_data['contexts'][0]['name']
+    context_value = received_json_data['contexts'][0]['params'][context_param_name]['value']
+    print(context_param_name)
+    print(context_value)
     # utterance = received_json_data['userRequest']['utterance']
     # param_id = int(received_json_data['action']['params']['id'])
     # print(type(param_id))
