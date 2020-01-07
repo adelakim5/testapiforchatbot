@@ -9,9 +9,6 @@ class transformData:
             self.nextBlockId = BLOCK_ID[BLOCK_ID.index(blockId)+1]
         else:
             self.nextBlockId = 0
-        
-    def __init__(self):
-        pass
     
     def getJsonData(self):
         data = {
