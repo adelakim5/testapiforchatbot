@@ -22,9 +22,10 @@ def hello(request):
     print(utterance)
     block_name = rData.getBlockName()
     print(block_name)
-    data = transformData(block_id).getJsonDump()   
     if(ANSWER.__contains__(utterance)):
         data = transformData(block_id).getJsonData()
+    else:
+        data = transformData(block_id).getJsonDump()
     return data
     
 

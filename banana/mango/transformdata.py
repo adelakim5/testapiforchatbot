@@ -1,13 +1,19 @@
 from django.http import JsonResponse
 from .shared import QUESTION, BLOCK_ID
 class transformData:
-    
+    0 1 2 3
     def __init__(self,blockId):
         self.blockId = blockId
         self.block_index = BLOCK_ID.index(blockId)
         self.question = QUESTION[self.block_index]
-        self.nextBlockId = BLOCK_ID[BLOCK_ID.index(blockId)+1]
+        if(len(BLOCK_ID) > BLOCK_ID.index(blockId)+1):
+            self.nextBlockId = BLOCK_ID[BLOCK_ID.index(blockId)+1]
+        else:
+            self.nextBlockId = 0
         
+    def __init__(self):
+        pass
+    
     def getJsonData(self):
         data = {
             "version": "2.0",
