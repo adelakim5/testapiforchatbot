@@ -15,10 +15,12 @@ def hello(request):
     block_id = received_json_data['userRequest']['block']['id']
     block_name = received_json_data['userRequest']['block']['name']
     if 'contexts' in received_json_data:
-        context_param_name = received_json_data['contexts'][0]['name']
-        context_value = received_json_data['contexts'][0]['params'][context_param_name]['value']
-        print(context_param_name)
-        print(context_value)
+        data_length = len(received_json_data['contexts'][0])
+        if data_length > 0:
+            context_param_name = received_json_data['contexts'][0]['name']
+            context_value = received_json_data['contexts'][0]['params'][context_param_name]['value']
+            print(context_param_name)
+            print(context_value)
     # utterance = received_json_data['userRequest']['utterance']
     # param_id = int(received_json_data['action']['params']['id'])
     # print(type(param_id))
