@@ -17,18 +17,19 @@ def hello(request):
     # print(type(param_id))
     # post = Post.objects.all().get(id=param_id)
     data = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "simpleText": {
-                        "text": "간단한 텍스트 요소입니다."
+            'version': "2.0",
+            'template': {
+                'outputs': [
+                    {
+                        'simpleText': {
+                            'text': 'simple text. plz show me'
+                        }
                     }
-                }
-            ]
+                ]
+            }
+
         }
-    }
-    return JsonResponse(data,json_dumps_params={'ensure_ascii': False} ,safe=False)
+    return JsonResponse(data)
 
 # Create your views he`re.
 class PostViewSet(viewsets.ModelViewSet):
