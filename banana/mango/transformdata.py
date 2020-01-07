@@ -1,9 +1,11 @@
 from django.http import JsonResponse
-
+from .shared import QUESTION, BLOCK_ID
 class transformData:
     
     def __init__(self,blockId):
-        self.blockId = blockId
+        self.blockId = BLOCK_ID[BLOCK_ID.index(blockId) + 1]
+        self.block_index = BLOCK_ID.index(blockId) + 1
+        self.question = QUESTION[self.block_index]
         
     def getJsonData(self):
         data = {
@@ -12,7 +14,7 @@ class transformData:
                 "outputs": [
                 {
                     "simpleText": {
-                    "text": "평소에는 아무렇지도 않던 일들이 괴롭고 귀찮게 느껴졌다."
+                    "text": self.question
                     }
                 }
                 ],
