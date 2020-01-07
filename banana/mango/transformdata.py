@@ -6,6 +6,7 @@ class transformData:
         self.blockId = blockId
         self.block_index = BLOCK_ID.index(blockId)
         self.question = QUESTION[self.block_index]
+        self.nextBlockId = BLOCK_ID[BLOCK_ID.index(blockId)+1]
         
     def getJsonData(self):
         data = {
@@ -22,25 +23,25 @@ class transformData:
                 {
                     "messageText": "극히 드물다",
                     "action": "block",
-                    "blockId": self.blockId,
+                    "blockId": self.nextBlockId,
                     "label": "극히 드물다"
                 },
                 {
                     "messageText": "가끔 있었다",
                     "action": "block",
-                    "blockId": self.blockId,
+                    "blockId": self.nextBlockId,
                     "label": "가끔 있었다"
                 },
                 {
                     "messageText": "종종 있었다",
                     "action": "block",
-                    "blockId": self.blockId,
+                    "blockId": self.nextBlockId,
                     "label": "종종 있었다"
                 },
                 {
                     "messageText": "대부분 그랬다",
                     "action": "block",
-                    "blockId": self.blockId,
+                    "blockId": self.nextBlockId,
                     "label": "대부분 그랬다"
                 }
                 ]
