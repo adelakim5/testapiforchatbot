@@ -24,7 +24,7 @@ def hello(request):
     print(block_name)
     if(ANSWER.__contains__(utterance)):
         data = transformData(block_id).getJsonData()
-        print('data: '+data)
+        print(str(data))
     else:
         data = transformData(block_id).getJsonDump()
     return data
