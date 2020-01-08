@@ -31,7 +31,7 @@ def hello(request):
         answer = 3 
     block_name = rData.getBlockName()
     print(block_name)
-    user_id = rData.getUserId
+    user_id = rData.getUserId()
     print(user_id)
     if(ANSWER.__contains__(utterance)):
         data = transformData(block_id).getJsonData() 
