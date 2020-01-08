@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
     
 class User(models.Model):
-    user = models.CharField(max_length=50, default='')
+    user = models.CharField(max_length=100, default='')
     
 class Post(models.Model):
     question = models.CharField(max_length=50, default='')

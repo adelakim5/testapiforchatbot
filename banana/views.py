@@ -31,8 +31,9 @@ def hello(request):
         answer = 3 
     block_name = rData.getBlockName()
     print(block_name)
-    user_id = User(user=rData.getUserId())
-    user_id.save()
+    user_id = rData.getUserId
+    user = User(user=user_id)
+    user.save()
     post = Post(question=block_name, answer=answer, userId=User.objects.get(user=user_id))
     post.save()
     if(ANSWER.__contains__(utterance)):
