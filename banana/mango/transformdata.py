@@ -58,7 +58,7 @@ class transformData:
             "outputs": [
                 {
                 "simpleText": {
-                    "text": "설문을 종료합니다."
+                    "text": "진단을 종료합니다."
                 }
                 }
             ]
