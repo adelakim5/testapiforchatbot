@@ -27,6 +27,7 @@ def hello(request):
     else:
         data = transformData(block_id).getJsonDump()
     return data
+    print('data: ' + data)
     
 
 # Create your views he`re.
