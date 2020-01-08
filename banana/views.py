@@ -33,6 +33,10 @@ def hello(request):
     print(block_name)
     user_id = rData.getUserId()
     print(user_id)
+    user = User(user=user_id)
+    user.save()
+    post = Post(question=block_name, answer=answer, userId=user_id)
+    post.save()
     if(ANSWER.__contains__(utterance)):
         data = transformData(block_id).getJsonData() 
     else:
