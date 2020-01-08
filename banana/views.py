@@ -24,7 +24,7 @@ def hello(request):
     print(block_name)
     if(ANSWER.__contains__(utterance)):
         if(utterance==ANSWER[0]):
-            post=Post(q01=0)
+            post=Post(userId='ywk', q01=0)
             post.save()
         data = transformData(block_id).getJsonData() 
     else:
