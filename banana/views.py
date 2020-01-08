@@ -23,16 +23,6 @@ def hello(request):
     block_name = rData.getBlockName()
     print(block_name)
     if(ANSWER.__contains__(utterance)):
-        if(utterance==ANSWER[0]):
-            answer01 = 0
-        elif(utterance==ANSWER[1]):
-            answer01 = 1
-        elif(utterance==ANSWER[2]):
-            answer01 = 2
-        elif(utterance==ANSWER[3]):
-            answer01 = 3
-        answer_1 = Post(q01=answer01)
-        answer_1.save()
         data = transformData(block_id).getJsonData()
     else:
         data = transformData(block_id).getJsonDump()
