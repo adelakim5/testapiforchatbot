@@ -24,10 +24,10 @@ def hello(request):
     print(block_name)
     if(ANSWER.__contains__(utterance)):
         data = transformData(block_id).getJsonData()
+        print('data: '+data)
     else:
         data = transformData(block_id).getJsonDump()
     return data
-    print('data: ' + data)
     
 
 # Create your views he`re.
