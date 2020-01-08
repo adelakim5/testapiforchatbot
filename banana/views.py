@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.http import HttpResponse
-from .models import Post
+from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from .mango.transformdata import transformData
 from .mango.responseData import responseData
@@ -20,8 +20,21 @@ def hello(request):
     print(block_id)
     utterance = rData.getUtterance()
     print(utterance)
+    answer = 0
+    if(utterance==ANSWER[0]):
+        answer = 0
+    elif(utterance==ANSWER[1]):
+        answer = 1
+    elif(utterance==ANSWER[2]):
+        answer = 2
+    elif(utterance==ANSWER[3]):
+        answer = 3 
     block_name = rData.getBlockName()
     print(block_name)
+    user_id = User(user=rData.getUserId())
+    user_id.save()
+    post = Post(question=block_name, answer=answer, userId=User.objects.get(user=user_id))
+    post.save()
     if(ANSWER.__contains__(utterance)):
         data = transformData(block_id).getJsonData() 
     else:

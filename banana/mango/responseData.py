@@ -13,6 +13,9 @@ class responseData:
     def getUtterance(self):
         return self.received_json_data['userRequest']['utterance']
     
+    def getUserId(self):
+        return self.received_json_data['userRequest']['user']['id']
+    
     def getContext(self):
         if 'contexts' in self.received_json_data:
             data_length = len(self.received_json_data['contexts'])
