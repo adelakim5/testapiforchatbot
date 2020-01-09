@@ -9,7 +9,7 @@ from .mango.responseData import responseData
 from .mango.shared import BLOCK_ID
 
 ## Serializers
-from .serializers import PostSerializer
+# from .serializers import PostSerializer
 
 ANSWER = ["극히 드물다","가끔 있었다","종종 있었다","대부분 그랬다","우울증 자가진단 시작하기"]
 
@@ -36,7 +36,7 @@ def hello(request):
     if(ANSWER.__contains__(utterance)):
         user = User(user=user_id)
         user.save()
-        post = Post(question=block_name, answer=answer, userId=user_id)
+        post = Question(question=block_name, answer=answer, userId=user_id)
         post.save()
         data = transformData(block_id).getJsonData() 
     else:
@@ -45,7 +45,7 @@ def hello(request):
     
 
 # Create your views he`re.
-class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+# class PostViewSet(viewsets.ModelViewSet):
+#     queryset = Post.objects.all()
+#     serializer_class = PostSerializer
 
